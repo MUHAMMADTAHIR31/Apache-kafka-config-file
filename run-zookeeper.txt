@@ -1,0 +1,27 @@
+============How to Run Apache Kafka  Broker and Server File==============
+ 1st Step: Zookeeper
+C:\kafka>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+2nd Step: kafka Server
+C:\kafka>.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+3rd Step: Create a Topic to store your Events
+C:\kafka>.\bin\windows\kafka-topics.bat --create --topic topics_demo --bootstrap-server localhost:9092
+
+4th Step: Create Producer to Sent Data/Messages
+C:\kafka>.\bin\windows\kafka-console-producer.bat --topic topics_demo --bootstrap-server localhost:9092 
+>Hello
+>Kafka Topics
+>Worlds
+
+5th Step: Create Consumer to Recieve Data
+C:\kafka>.\bin\windows\kafka-console-consumer.bat --topic topics_demo --bootstrap-server localhost:9092
+
+6th Step: From Beginning Data
+C:\kafka>.\bin\windows\kafka-console-consumer.bat --topic topics_demo --from-beginning --bootstrap-server localhost:9092
+>Hello
+>Kafka Topics
+>Worlds
+
+
+
